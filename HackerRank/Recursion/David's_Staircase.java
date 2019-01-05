@@ -11,22 +11,20 @@ public class Solution {
     // Complete the stepPerms function below.
     static int stepPerms(int n) {
         int[] array = new int[n]; 
-     if (n <= 3) 
-     { n=(n == 3) ? 4 : n; return n; }
+     if (n < 4) 
+     { n=(n == 3) ? 4 : n; 
+        return n; 
+     }
      
      array[0]=1;
      array[1]=2;
      array[2]=4;
 
      for(int i=3;i<array.length; i++){
-         array[i] = array[i-1]+ array[i-2]+array[i-3];
+         array[i] = array[i-1]+array[i-2]+array[i-3];
      }
       return array[array.length-1];
     }
-
-    
-
-
 
     private static final Scanner scanner = new Scanner(System.in);
 
